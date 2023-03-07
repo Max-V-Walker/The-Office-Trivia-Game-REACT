@@ -1,0 +1,25 @@
+.intro-text{
+    border-bottom: 3px solid #c2885d;
+}
+
+.start-field {
+    text-align: center;
+    background-color: #fcf5e3;
+    border: #c2885d 5px solid;
+    padding: 25px 25px 5px 25px;
+    border-radius: 10px;
+    width: 55%;
+    max-width: 720px;
+    margin: 80px 100% auto 60px;
+    background-attachment: fixed;
+}
+
+#intro-text > p {
+    width: 75%;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+p{
+    word-spacing: .2em;
+}

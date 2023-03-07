@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Interaction.css'
 
 import Button from '../actions/Button'
 
@@ -12,14 +13,14 @@ const Interaction = () => {
     }
 
     return (
-        <section className='home-btns play-btn'>
-            {showPlayBtn && <Button type='submit' value='Play' className='play-btn' onClick={beginGame}/>}
+        <section>
+            {showPlayBtn && <Button type='submit' value='Play' className='play-btn home-btns' onClick={beginGame}/>}
 
             {showDifficultyButtons && (
                 <section className='difficulty-btns'>
-                    <Button type='submit' value='Beginner'/>
-                    <Button type='submit' value='Medium'/>
-                    <Button type='submit' value='Difficult'/>
+                    <Button type='submit' value='Beginner' className='home-btns set-level-btns' />
+                    <Button type='submit' value='Medium' className='home-btns set-level-btns' />
+                    <Button type='submit' value='Difficult' className='home-btns set-level-btns' />
                 </section>
             )}
         </section >

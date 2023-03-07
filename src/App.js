@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css';
 
 import allQuestions from './data/triviaQuestions'
 import LandingPage from './components/landing-page/LandPage'
 
 function App() {
-
+  const [hasGameBegan, setHasGameBegan] = useState(false)
 
   return (
-    <React.Fragment>
-      <LandingPage />
-    </React.Fragment>
+    <div id='app'>
+      {!hasGameBegan && <LandingPage />}
+      {/* {hasGameBegan && <GamePage />} */}
+    </div>
   );
 }
 

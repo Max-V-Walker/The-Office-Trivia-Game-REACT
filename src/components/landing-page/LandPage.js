@@ -1,14 +1,14 @@
 import React from 'react';
 
+import './LandingPage.css'
+
 import IntroField from './IntroField'
-import Interaction from './Interaction'
 
 const LandPage = () => {
     return (
-        <React.Fragment>
+        <section className='start-section'>
             <IntroField />
-            <Interaction />
-        </React.Fragment>
+        </section>
     );
 };
 

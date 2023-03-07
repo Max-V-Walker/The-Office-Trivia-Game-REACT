@@ -1,0 +1,32 @@
+.play-btn {
+    font-family: "Special Elite", cursive;
+    background-color: #ffffbf;
+    border: black solid 2px;
+    border-radius: 35%;
+    padding: .8em;
+    width: 10%;
+    min-width: 52.5px;
+    margin-top: .8em;
+    margin-bottom: .8em;
+    text-align: center;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.set-level-btns {
+    font-family: "Special Elite", cursive;
+    background-color: #ffffbf;
+    border: black solid 2px;
+    border-radius: 35%;
+    margin: 10px 1em;
+    padding: .8em;
+}
+
+.home-btns:hover {
+    border-color: #FFDE2E;
+    color: #FFDE2E;
+    background-color: #e2aeb4;
+    box-shadow: 0 .5em .8em -4.5px #296e01;
+    transform: translateY(-.5em);
+    cursor: pointer;
+}
