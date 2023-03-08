@@ -7,7 +7,7 @@ const IntroField = () => {
   return (
     <section className="start-field">
       <h1>The Office Trivia</h1>
-      <h3 class="intro-text">
+      <h3 className="intro-text">
         Play Our Free Trivia Game Based On NBC's, The Office
       </h3>
 

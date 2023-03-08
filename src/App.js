@@ -1,17 +1,28 @@
-import React, { useState } from 'react'
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
-import allQuestions from './data/triviaQuestions'
-import LandingPage from './components/landing-page/LandPage'
+import DifficultyContext from "./context/gameContext";
+import LandingPage from "./components/landing-page/LandingPage";
+import GamePage from "./components/game-page/GamePage";
 
 function App() {
-  const [hasGameBegan, setHasGameBegan] = useState(false)
+  const [isGameOn, setIsGameOn] = useState(false);
+  const [difficulty, setDifficulty] = useState("");
 
   return (
-    <div id='app'>
-      {!hasGameBegan && <LandingPage />}
-      {/* {hasGameBegan && <GamePage />} */}
-    </div>
+    <DifficultyContext.Provider
+      value={{
+        difficulty: difficulty,
+        setDifficulty: setDifficulty,
+        setIsGameOn: setIsGameOn,
+      }}
+    >
+      <div id="app">
+        {!isGameOn && <LandingPage />}
+
+        {isGameOn && <GamePage />}
+      </div>
+    </DifficultyContext.Provider>
   );
 }
 
