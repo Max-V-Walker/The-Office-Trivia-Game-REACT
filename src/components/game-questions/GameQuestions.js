@@ -22,11 +22,13 @@ const GameQuestions = () => {
   const [questionAnswered, setQuestionAnswered] = useState(false);
   const [correctAnswerGuessed, setCorrectAnswerGuessed] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const [showResultsbtn, setShowResultsBtn] = useState(false);
+  const [scoreResponse, setScoreResponse] = useState("");
 
   const nextQuestionHandler = () => {
     setQuestionIndex((prevState) => (prevState += 1));
     setQuestionAnswered(false);
-    checkForGameCompleteHandler();
+    // checkForGameCompleteHandler();
   };
 
   const validateAnswerHandler = (e) => {
@@ -45,6 +47,10 @@ const GameQuestions = () => {
       e.target.style.backgroundColor = "red";
     }
 
+    if (questionIndex === 9) {
+      setShowResultsBtn(true);
+    }
+
     setTimeout(() => {
       setQuestionAnswered(true);
       if (selectedAnswer === gameQuestions[questionIndex].answer) {
@@ -56,11 +62,27 @@ const GameQuestions = () => {
     }, 650);
   };
 
-  const checkForGameCompleteHandler = () => {
-    // LEFT OFF HERE. NEED TO END GAME AT THE 10TH QUESTION AND GO FROM THERE.
-    if (questionIndex >= 9) {
-      setGameOver(true);
+  const resultBtnHandler = () => {
+    if (score <= 15) {
+      setScoreResponse("Umm.. did you even watch The Office?");
+    } else if (score >= 20 && score <= 30) {
+      setScoreResponse(
+        "We think you may need to watch the series another few times.."
+      );
+    } else if (score >= 35 && score <= 45) {
+      setScoreResponse("You're on your way to being a true Office fan!");
+    } else if (score >= 50 && score <= 60) {
+      setScoreResponse("We can tell you've re-watched the series many times!");
+    } else {
+      setScoreResponse("Wow, you're an Office pro!!");
     }
+
+    setQuestionAnswered(false);
+    setGameOver(true);
+  };
+
+  const playAgainHandler = () => {
+    ctx.setIsGameOn(false);
   };
 
   return (
@@ -108,18 +130,37 @@ const GameQuestions = () => {
             className="game-images"
           />
           <br />
-          <Button
-            value="Next"
-            onClick={nextQuestionHandler}
-            className="next-question-btn"
-          />
+          {!showResultsbtn && (
+            <Button
+              value="Next"
+              onClick={nextQuestionHandler}
+              className="next-question-btn"
+            />
+          )}
+
+          {showResultsbtn && (
+            <Button
+              value="Results"
+              onClick={resultBtnHandler}
+              className="results-btn"
+            />
+          )}
         </Modal>
       )}
 
       {gameOver && (
         <Modal>
-          <h4>Game complete!</h4>
-          <p>See how you performed below!</p>
+          <div className="game-summary">
+            <h4>Game Complete!</h4>
+            <p>Your final score was {score}!</p>
+            <p>{scoreResponse}</p>
+
+            <Button
+              value="Play Again"
+              onClick={playAgainHandler}
+              className="play-again-btn"
+            />
+          </div>
         </Modal>
       )}
     </div>

@@ -31,7 +31,7 @@
     flex-wrap: wrap;
 }
 
-.option-btn, .next-question-btn {
+.option-btn, .next-question-btn, .results-btn, .play-again-btn {
     font-family: "Special Elite", cursive;
     background-color: #ffffbf;
     border: black solid 2px;
@@ -45,24 +45,25 @@
     transition: .2s;
 }
 
-.option-btn:hover, .next-question-btn:hover {
+.option-btn:hover, .next-question-btn:hover, .results-btn:hover, .play-again-btn:hover {
     text-decoration: underline;
     /* font-size: .9em; */
     box-shadow: 2px 2px 2px gray;
     /* border-color: #e2aeb4; */
     /* color: #e2aeb4; */
-    /* background-color: #e2aeb4; Background-color is set in script file */
     /* box-shadow: -.2em .6em .8em -4.5px #296e01; */
     transform: translateY(-.5em);
     cursor: pointer;
 }
 
-.answer-confirm-container {
-    /* text-align: center; */
-}
-
 .next-question-btn {
     width: 10%;
+    min-width: 52.5px;
+    margin-left: 85%;
+}
+
+.results-btn {
+    width: 12%;
     min-width: 52.5px;
     margin-left: 85%;
 }
@@ -72,6 +73,18 @@
     border-radius: 3.5px;
     display: block;
     width: 65%;
-    /* height: 45%; */
     margin: 0 auto;
+}
+
+.game-summary {
+    word-spacing: .2em;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px grey;
+    color: black;
+    width: 70%;
+    height: 60%;
+    margin: 40px auto;
+    padding: 10px;
+    text-align: center;
 }
