@@ -1,5 +1,7 @@
 # The Office Trivia Game
 
+https://office-trivia-game.vercel.app/
+
 This project is a copy of another Office Trivia Game, however it's built in ReactJS.
 
 Questions for each difficulty are randomized that way each time you play, it's a different set of questions presented to the player. Guess a question correctly, and gain 5 points to your total score. Guess a question incorrectly, and no harm will come to your total score.
